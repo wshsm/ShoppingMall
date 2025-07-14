@@ -105,6 +105,11 @@ export default {
     this.load()
   },
   methods: {
+    fixUrl(url) {
+      if (!url) return '';
+      if (url.startsWith('http')) return url;
+      return '/api' + url;
+    },
     handleAdd() {   // 新增数据
       this.form = {}  // 新增数据的时候清空数据
       this.fromVisible = true   // 打开弹窗

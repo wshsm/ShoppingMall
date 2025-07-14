@@ -23,7 +23,7 @@
         <div v-else>
           <el-dropdown>
             <div class="front-header-dropdown">
-              <img :src="user.avatar" alt="" @click="goTo('/front/person')">
+              <img :src="fixUrl(user.avatar)" alt="" @click="goTo('/front/person')">
               <div style="margin-left: 10px">
                 <span>{{ user.name }}</span><i class="el-icon-arrow-down" style="margin-left: 5px"></i>
               </div>
@@ -71,6 +71,11 @@ export default {
     this.loadNotice()
   },
   methods: {
+    fixUrl(url) {
+      if (!url) return '';
+      if (url.startsWith('http')) return url;
+      return '/api' + url;
+    },
     loadNotice() {
       this.$request.get('/notice/selectAll').then(res => {
         this.notice = res.data

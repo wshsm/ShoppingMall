@@ -50,9 +50,9 @@ public class OrdersServiceImpl implements OrdersService {
             if (orders.getUserId() != null) {
                 queryWrapper.eq("user_id", orders.getUserId());
             }
-            if (orders.getOrderNo() != null) {
-                queryWrapper.like("order_no", orders.getOrderNo());
-            }
+//            if (orders.getOrderNo() != null) {
+//                queryWrapper.like("order_no", orders.getOrderNo());
+//            }
             if (orders.getStatus() != null) {
                 queryWrapper.eq("status", orders.getStatus());
             }

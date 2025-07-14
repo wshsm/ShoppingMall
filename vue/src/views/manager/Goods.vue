@@ -19,7 +19,7 @@
           <template v-slot="scope">
             <div style="display: flex; align-items: center; justify-content: center;">
               <el-image style="width: 40px; height: 40px;" v-if="scope.row.img"
-                        :src="scope.row.img" :preview-src-list="[scope.row.img]"></el-image>
+                        :src="fixUrl(scope.row.img)" :preview-src-list="[scope.row.img]"></el-image>
             </div>
           </template>
         </el-table-column>
@@ -163,6 +163,11 @@ export default {
   //   initWangEditor('')
   // },
   methods: {
+    fixUrl(url) {
+      if (!url) return '';
+      if (url.startsWith('http')) return url;
+      return '/api' + url;
+    },
     handleAdd() {   // 新增数据
       if (this.user.status !== '审核通过' && this.user.role === 'BUSINESS') {
         this.$message.warning("您的店铺信息尚未审核通过，暂时不允许新增商品")

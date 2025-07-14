@@ -49,8 +49,8 @@ public class AddressServiceImpl implements AddressService {
             if (address.getUserId() != null) {
                 queryWrapper.eq("user_id", address.getUserId());
             }
-            if (address.getName() != null) {
-                queryWrapper.like("name", address.getName());
+            if (address.getUsername() != null) {
+                queryWrapper.like("name", address.getUsername());
             }
         }
         return addressMapper.selectList(queryWrapper);

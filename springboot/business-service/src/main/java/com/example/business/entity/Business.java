@@ -30,11 +30,11 @@ public class Business implements Serializable {
     private String role;
     /** 商家电话 */
     private String phone;
-    /** 商家邮箱 */
+    /** 邮箱 */
     private String email;
     /** 商家描述 */
     private String description;
     /** 商家状态 */
     private String status;
-
+  
 } 

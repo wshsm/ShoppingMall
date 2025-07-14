@@ -27,14 +27,16 @@ public class Goods implements Serializable {
     private Double price;
     /** 商品图片 */
     private String img;
-    /** 商品分类ID */
+//    /** 商品库存 */
+//    private Integer stock;
+//    /** 商品状态 */
+//    private String status;
+    /** 商品销量*/
+    private Integer count;
+    /** 商品库存*/
+    private Integer inventory;
+    /** 分类ID*/
     private Integer categoryId;
-    /** 商品库存 */
-    private Integer stock;
-    /** 商品状态 */
-    private String status;
-    /** 创建时间 */
-    private String createTime;
-    /** 更新时间 */
-    private String updateTime;
+    /** 店铺ID*/
+    private Integer businessId;
 } 

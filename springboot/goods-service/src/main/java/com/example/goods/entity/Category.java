@@ -23,4 +23,6 @@ public class Category implements Serializable {
     private String name;
     /** 分类描述 */
     private String description;
+    /** 分类图标 */
+    private String img;
 } 

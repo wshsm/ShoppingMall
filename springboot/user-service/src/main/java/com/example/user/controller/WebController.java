@@ -49,16 +49,22 @@ public class WebController {
             admin.setPassword(account.getPassword());
             Admin loginAdmin = adminService.login(admin);
             if (loginAdmin == null) return Result.error(ResultCodeEnum.USER_ACCOUNT_ERROR);
-            // 可根据需要将Admin转为Account返回
+            account.setId(loginAdmin.getId()); // 补充id
             account.setName(loginAdmin.getName());
             account.setRole(loginAdmin.getRole());
             account.setAvatar(loginAdmin.getAvatar());
-            account.setPhone(loginAdmin.getPhone());
-            account.setEmail(loginAdmin.getEmail());
+//            account.setPhone(loginAdmin.getPhone());
+//            account.setEmail(loginAdmin.getEmail());
             return Result.success(account);
         }
         if (RoleEnum.BUSINESS.name().equals(account.getRole())) {
-            account = businessService.login(account);
+            Account loginAccount = businessService.login(account);
+            if (loginAccount != null) {
+                account.setId(loginAccount.getId()); // 补充id
+                account.setName(loginAccount.getName());
+                account.setRole(loginAccount.getRole());
+                account.setAvatar(loginAccount.getAvatar());
+            }
             return Result.success(account);
         }
         if (RoleEnum.USER.name().equals(account.getRole())) {
@@ -67,11 +73,12 @@ public class WebController {
             user.setPassword(account.getPassword());
             User loginUser = userService.login(user);
             if (loginUser == null) return Result.error(ResultCodeEnum.USER_ACCOUNT_ERROR);
+            account.setId(loginUser.getId()); // 补充id
             account.setName(loginUser.getName());
             account.setRole(loginUser.getRole());
             account.setAvatar(loginUser.getAvatar());
-            account.setPhone(loginUser.getPhone());
-            account.setEmail(loginUser.getEmail());
+//            account.setPhone(loginUser.getPhone());
+//            account.setEmail(loginUser.getEmail());
             return Result.success(account);
         }
         return Result.error(ResultCodeEnum.USER_ACCOUNT_ERROR);
@@ -93,8 +100,8 @@ public class WebController {
             admin.setName(account.getName());
             admin.setRole(account.getRole());
             admin.setAvatar(account.getAvatar());
-            admin.setPhone(account.getPhone());
-            admin.setEmail(account.getEmail());
+//            admin.setPhone(account.getPhone());
+//            admin.setEmail(account.getEmail());
             adminService.register(admin);
         }
         if (RoleEnum.BUSINESS.name().equals(account.getRole())) {
@@ -107,8 +114,8 @@ public class WebController {
             user.setName(account.getName());
             user.setRole(account.getRole());
             user.setAvatar(account.getAvatar());
-            user.setPhone(account.getPhone());
-            user.setEmail(account.getEmail());
+//            user.setPhone(account.getPhone());
+//            user.setEmail(account.getEmail());
             userService.register(user);
         }
         return Result.success();

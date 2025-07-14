@@ -49,9 +49,6 @@ public class NoticeServiceImpl implements NoticeService {
             if (notice.getTitle() != null) {
                 queryWrapper.like("title", notice.getTitle());
             }
-            if (notice.getStatus() != null) {
-                queryWrapper.eq("status", notice.getStatus());
-            }
         }
         return noticeMapper.selectList(queryWrapper);
     }

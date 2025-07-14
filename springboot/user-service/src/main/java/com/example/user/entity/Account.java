@@ -12,24 +12,19 @@ import java.io.Serializable;
 public class Account implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    /** ID */
     private Integer id;
     /** 用户名 */
     private String username;
+    /** 名称 */
+    private String name;
     /** 密码 */
     private String password;
+    /** 角色标识 */
+    private String role;
     /** 新密码 */
     private String newPassword;
-    /** 角色 */
-    private String role;
-    /** 昵称 */
-    private String name;
     /** 头像 */
     private String avatar;
-    /** 电话 */
-    private String phone;
-    /** 邮箱 */
-    private String email;
-    /** 地址 */
-    private String address;
+
+    private String token;
 }

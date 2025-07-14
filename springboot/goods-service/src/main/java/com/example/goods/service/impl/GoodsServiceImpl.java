@@ -52,9 +52,9 @@ public class GoodsServiceImpl implements GoodsService {
             if (goods.getCategoryId() != null) {
                 queryWrapper.eq("category_id", goods.getCategoryId());
             }
-            if (goods.getStatus() != null) {
-                queryWrapper.eq("status", goods.getStatus());
-            }
+//            if (goods.getStatus() != null) {
+//                queryWrapper.eq("status", goods.getStatus());
+            // }
         }
         return goodsMapper.selectList(queryWrapper);
     }
