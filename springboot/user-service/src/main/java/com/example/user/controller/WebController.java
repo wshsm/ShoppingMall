@@ -48,7 +48,7 @@ public class WebController {
             admin.setPassword(account.getPassword());
             Admin loginAdmin = adminService.login(admin);
             if (loginAdmin == null) return Result.error(ResultCodeEnum.USER_ACCOUNT_ERROR);
-            // 可根据需要将Admin转为Account返回
+            account.setId(loginAdmin.getId()); // 补充id
             account.setName(loginAdmin.getName());
             account.setRole(loginAdmin.getRole());
             account.setAvatar(loginAdmin.getAvatar());
@@ -57,7 +57,13 @@ public class WebController {
             return Result.success(account);
         }
         if (RoleEnum.BUSINESS.name().equals(account.getRole())) {
-            account = businessService.login(account);
+            Account loginAccount = businessService.login(account);
+            if (loginAccount != null) {
+                account.setId(loginAccount.getId()); // 补充id
+                account.setName(loginAccount.getName());
+                account.setRole(loginAccount.getRole());
+                account.setAvatar(loginAccount.getAvatar());
+            }
             return Result.success(account);
         }
         if (RoleEnum.USER.name().equals(account.getRole())) {
@@ -66,6 +72,7 @@ public class WebController {
             user.setPassword(account.getPassword());
             User loginUser = userService.login(user);
             if (loginUser == null) return Result.error(ResultCodeEnum.USER_ACCOUNT_ERROR);
+            account.setId(loginUser.getId()); // 补充id
             account.setName(loginUser.getName());
             account.setRole(loginUser.getRole());
             account.setAvatar(loginUser.getAvatar());
