@@ -4,9 +4,9 @@ import com.example.common.Result;
 import com.example.user.entity.Address;
 import com.example.user.service.AddressService;
 import com.github.pagehelper.PageInfo;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @RestController

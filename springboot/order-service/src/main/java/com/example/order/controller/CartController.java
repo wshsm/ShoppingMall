@@ -4,9 +4,10 @@ import com.example.common.Result;
 import com.example.order.entity.Cart;
 import com.example.order.service.CartService;
 import com.github.pagehelper.PageInfo;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
+
 import java.util.List;
 
 @RestController

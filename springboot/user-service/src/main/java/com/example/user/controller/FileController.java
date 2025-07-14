@@ -1,6 +1,7 @@
 package com.example.user.controller;
 
 import com.example.common.Result;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -29,7 +30,7 @@ public class FileController {
 
     // 支持/api/files/{fileUUID} 兼容前端代理
     @GetMapping({"/files/{fileUUID}", "/api/files/{fileUUID}"})
-    public void download(@PathVariable String fileUUID, javax.servlet.http.HttpServletResponse response) throws IOException {
+    public void download(@PathVariable String fileUUID, HttpServletResponse response) throws IOException {
         File uploadDir = new File("files");
         File file = new File(uploadDir.getAbsolutePath() + "/" + fileUUID);
         if (file.exists()) {
