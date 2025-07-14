@@ -19,14 +19,8 @@ public class Address implements Serializable {
     /** ID */
     @TableId(type = IdType.AUTO)
     private Integer id;
-    /** 用户ID */
     private Integer userId;
-    /** 收货人姓名 */
-    private String name;
-    /** 收货人电话 */
+    private String username;
+    private String useraddress;
     private String phone;
-    /** 详细地址 */
-    private String address;
-    /** 是否默认地址 */
-    private Boolean isDefault;
 } 

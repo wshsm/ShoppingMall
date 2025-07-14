@@ -25,6 +25,4 @@ public class Notice implements Serializable {
     private String content;
     /** 通知时间 */
     private String time;
-    /** 通知状态 */
-    private String status;
 } 

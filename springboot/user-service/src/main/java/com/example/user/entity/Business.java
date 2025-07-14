@@ -18,12 +18,13 @@ public class Business implements Serializable {
 
     /** ID */
     @TableId(type = IdType.AUTO)
+    /** ID */
     private Integer id;
     /** 用户名 */
     private String username;
     /** 密码 */
     private String password;
-    /** 商家昵称 */
+    /** 姓名 */
     private String name;
     /** 电话 */
     private String phone;
@@ -31,8 +32,10 @@ public class Business implements Serializable {
     private String email;
     /** 头像 */
     private String avatar;
-    /** 地址 */
-    private String address;
     /** 角色标识 */
     private String role;
+    /** 店铺介绍*/
+    private String description;
+    /** 店铺审核状态*/
+    private String status;
 } 

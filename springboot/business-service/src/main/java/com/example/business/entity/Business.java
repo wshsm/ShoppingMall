@@ -19,20 +19,22 @@ public class Business implements Serializable {
     /** ID */
     @TableId(type = IdType.AUTO)
     private Integer id;
-    /** 商家名称 */
+    /** 用户名 */
+    private String username;
+    /** 密码 */
+    private String password;
+    /** 姓名 */
     private String name;
-    /** 商家描述 */
-    private String description;
-    /** 商家地址 */
-    private String address;
-    /** 商家电话 */
+    /** 电话 */
     private String phone;
-    /** 商家邮箱 */
+    /** 邮箱 */
     private String email;
-    /** 商家状态 */
+    /** 头像 */
+    private String avatar;
+    /** 角色标识 */
+    private String role;
+    /** 店铺介绍*/
+    private String description;
+    /** 店铺审核状态*/
     private String status;
-    /** 创建时间 */
-    private String createTime;
-    /** 更新时间 */
-    private String updateTime;
 } 

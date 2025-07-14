@@ -18,15 +18,10 @@ public class Cart implements Serializable {
 
     /** ID */
     @TableId(type = IdType.AUTO)
+
     private Integer id;
-    /** 用户ID */
     private Integer userId;
-    /** 商品ID */
+    private Integer businessId;
     private Integer goodsId;
-    /** 商品数量 */
-    private Integer quantity;
-    /** 创建时间 */
-    private String createTime;
-    /** 更新时间 */
-    private String updateTime;
+    private Integer num;
 } 
