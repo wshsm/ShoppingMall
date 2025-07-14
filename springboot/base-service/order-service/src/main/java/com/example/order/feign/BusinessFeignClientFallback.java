@@ -2,14 +2,13 @@ package com.example.order.feign;
 
 import com.example.common.R;
 import com.example.common.enums.ResultCodeEnum;
-import com.example.dto.GoodsDTO;
+import com.example.entity.Business;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GoodsFeignFallback implements GoodsFeignClient {
-
+public class BusinessFeignClientFallback implements BusinessFeignClient {
     @Override
-    public R<GoodsDTO> selectGoodsById(Integer id) {
+    public R<Business> getBusinessById(Integer id) {
         return R.error(ResultCodeEnum.SYSTEM_ERROR);
     }
 }

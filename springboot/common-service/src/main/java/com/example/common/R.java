@@ -39,8 +39,8 @@ public class R<T> {
         return tResult;
     }
 
-    public static R error(ResultCodeEnum resultCodeEnum) {
-        R tResult = new R();
+    public static <T>R<T> error(ResultCodeEnum resultCodeEnum) {
+        R<T> tResult = new R<T>();
         tResult.setCode(resultCodeEnum.code);
         tResult.setMsg(resultCodeEnum.msg);
         return tResult;

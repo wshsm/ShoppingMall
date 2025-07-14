@@ -4,7 +4,7 @@ import com.example.common.R;
 import com.example.entity.Business;
 import com.example.entity.Category;
 import com.example.entity.Goods;
-import com.example.goods.dto.GoodsDTO;
+import com.example.dto.GoodsDTO;
 import com.example.goods.feign.BusinessFeignClient;
 import com.example.goods.service.CategoryService;
 import com.example.goods.service.GoodsService;

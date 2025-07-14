@@ -2,6 +2,9 @@ package com.example.order.controller;
 
 import com.example.common.R;
 import com.example.entity.Cart;
+import com.example.order.dto.CartDTO;
+import com.example.order.feign.BusinessFeignClient;
+import com.example.order.feign.GoodsFeignClient;
 import com.example.order.service.CartService;
 import com.github.pagehelper.PageInfo;
 import jakarta.annotation.Resource;
@@ -17,7 +20,11 @@ public class CartController {
     @Resource
     private CartService cartService;
 
+    @Resource
+    private GoodsFeignClient goodsFeignClient;
 
+    @Resource
+    private BusinessFeignClient businessFeignClient;
 
     /**
      * 新增
@@ -68,7 +75,7 @@ public class CartController {
      * 查询所有
      */
     @GetMapping("/selectAll")
-    public R selectAll(Cart cart ) {
+    public R selectAll(Cart cart) {
         List<Cart> list = cartService.selectAll(cart);
         return R.success(list);
     }
@@ -81,7 +88,22 @@ public class CartController {
                         @RequestParam(defaultValue = "1") Integer pageNum,
                         @RequestParam(defaultValue = "10") Integer pageSize) {
         PageInfo<Cart> page = cartService.selectPage(cart, pageNum, pageSize);
-        return R.success(page);
+        List<CartDTO> cartDTOList = page.getList().stream()
+                .map(CartDTO::new)
+                .toList();
+
+        cartDTOList.forEach(item -> {
+            var goods = goodsFeignClient.selectGoodsById(item.getGoodsId()).getData();
+            item.setGoodsName(goods.getName());
+            item.setGoodsImg(goods.getImg());
+            item.setGoodsPrice(goods.getPrice());
+        });
+        cartDTOList.forEach(item -> {
+            var business = businessFeignClient.getBusinessById(item.getBusinessId()).getData();
+            item.setBusinessName(business.getName());
+        });
+
+        return R.success(new PageInfo<>(cartDTOList));
     }
 
 } 

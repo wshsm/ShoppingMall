@@ -65,7 +65,7 @@ public class OrdersController {
      * 查询所有
      */
     @GetMapping("/selectAll")
-    public R selectAll(Orders orders ) {
+    public R selectAll(Orders orders) {
         List<Orders> list = ordersService.selectAll(orders);
         return R.success(list);
     }

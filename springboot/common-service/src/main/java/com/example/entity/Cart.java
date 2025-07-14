@@ -24,4 +24,12 @@ public class Cart implements Serializable {
     private Integer businessId;
     private Integer goodsId;
     private Integer num;
+
+    public Cart(Cart cart) {
+        this.id = cart.id;
+        this.userId = cart.userId;
+        this.businessId = cart.businessId;
+        this.goodsId = cart.goodsId;
+        this.num = cart.num;
+    }
 } 
