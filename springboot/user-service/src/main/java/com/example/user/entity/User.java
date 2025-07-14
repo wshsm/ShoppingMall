@@ -1,6 +1,7 @@
 package com.example.user.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -32,7 +33,7 @@ public class User implements Serializable {
     /** 头像 */
     private String avatar;
     /** 地址 */
-    private String address;
+    // private String address;
     /** 角色标识 */
     private String role;
 }

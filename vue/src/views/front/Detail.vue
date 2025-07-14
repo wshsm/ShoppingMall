@@ -3,7 +3,7 @@
     <div style="padding: 15px 20px">
       <el-row :gutter="20">
         <el-col :span="12">
-          <img :src="goodsData.img" alt="" style="width: 100%; height: 400px; border-radius: 20px">
+          <img :src="fixUrl(goodsData.img)" alt="" style="width: 100%; height: 400px; border-radius: 20px">
         </el-col>
         <el-col :span="12">
           <div style="font-size: 20px; font-weight: 900; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{goodsData.name}}</div>
@@ -79,6 +79,11 @@ export default {
           this.$message.error(res.msg)
         }
       })
+    },
+    fixUrl(url) {
+      if (!url) return '';
+      if (url.startsWith('http')) return url;
+      return '/api' + url;
     }
   },
 }

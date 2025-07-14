@@ -21,7 +21,7 @@
           <template v-slot="scope">
             <div style="display: flex; align-items: center; justify-content: center;">
               <el-image style="width: 40px; height: 40px;" v-if="scope.row.img"
-                        :src="scope.row.img" :preview-src-list="[scope.row.img]"></el-image>
+                        :src="fixUrl(scope.row.img)" :preview-src-list="[fixUrl(scope.row.img)]"></el-image>
             </div>
           </template>
         </el-table-column>
@@ -58,7 +58,7 @@
         <el-form-item label="分类图标">
           <el-upload
               class="avatar-uploader"
-              :action="$baseUrl + '/files/upload'"
+              :action="'/api/files/upload'"
               :headers="{ token: user.token }"
               list-type="picture"
               :on-success="handleAvatarSuccess"

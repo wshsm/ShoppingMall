@@ -82,19 +82,4 @@ public class UserServiceImpl implements UserService {
     public void updatePassword(User user) {
         userMapper.updateById(user);
     }
-
-    @Override
-    public Account login(Account account) {
-        return userMapper.login(account);
-    }
-
-    @Override
-    public void register(Account account) {
-        userMapper.insert(account);
-    }
-
-    @Override
-    public void updatePassword(Account account) {
-        userMapper.updatePassword(account);
-    }
 } 

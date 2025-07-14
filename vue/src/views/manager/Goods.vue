@@ -63,7 +63,7 @@
         <el-form-item label="商品主图">
           <el-upload
               class="avatar-uploader"
-              :action="$baseUrl + '/files/upload'"
+              :action="'/api/files/upload'"
               :headers="{ token: user.token }"
               list-type="picture"
               :on-success="handleAvatarSuccess"
@@ -119,7 +119,7 @@ function initWangEditor(content) {	setTimeout(() => {
     editor = new E('#editor')
     editor.config.placeholder = '请输入内容'
     editor.config.uploadFileName = 'file'
-    editor.config.uploadImgServer = 'http://localhost:9090/files/wang/upload'
+    editor.config.uploadImgServer = '/api/files/wang/upload'
     editor.create()
   }
   editor.txt.html(content)

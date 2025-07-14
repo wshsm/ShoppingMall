@@ -1,6 +1,5 @@
 package com.example.user.service;
 
-import com.example.user.entity.Account;
 import com.example.user.entity.User;
 import com.github.pagehelper.PageInfo;
 
@@ -17,7 +16,4 @@ public interface UserService {
     User login(User user);
     void register(User user);
     void updatePassword(User user);
-    Account login(Account account);
-    void register(Account account);
-    void updatePassword(Account account);
 } 

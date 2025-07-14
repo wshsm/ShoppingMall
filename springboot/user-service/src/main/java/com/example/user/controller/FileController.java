@@ -9,10 +9,9 @@ import java.io.IOException;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/file")
 public class FileController {
 
-    @PostMapping("/upload")
+    @PostMapping("/files/upload")
     public Result upload(MultipartFile file) throws IOException {
         String originalFilename = file.getOriginalFilename();
         String type = originalFilename.substring(originalFilename.lastIndexOf(".") + 1);
@@ -24,10 +23,12 @@ public class FileController {
         }
         File dest = new File(uploadDir.getAbsolutePath() + "/" + fileUUID);
         file.transferTo(dest);
-        return Result.success(fileUUID);
+        // 返回相对路径
+        return Result.success("/files/" + fileUUID);
     }
 
-    @GetMapping("/{fileUUID}")
+    // 支持/api/files/{fileUUID} 兼容前端代理
+    @GetMapping({"/files/{fileUUID}", "/api/files/{fileUUID}"})
     public void download(@PathVariable String fileUUID, javax.servlet.http.HttpServletResponse response) throws IOException {
         File uploadDir = new File("files");
         File file = new File(uploadDir.getAbsolutePath() + "/" + fileUUID);

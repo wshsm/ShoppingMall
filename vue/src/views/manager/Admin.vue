@@ -23,7 +23,7 @@
           <template v-slot="scope">
             <div style="display: flex; align-items: center; justify-content: center;">
               <el-image style="width: 40px; height: 40px; border-radius: 50%" v-if="scope.row.avatar"
-                        :src="scope.row.avatar" :preview-src-list="[scope.row.avatar]"></el-image>
+                        :src="fixUrl(scope.row.avatar)" :preview-src-list="[fixUrl(scope.row.avatar)]"></el-image>
             </div>
           </template>
         </el-table-column>
@@ -67,7 +67,7 @@
         <el-form-item label="头像">
           <el-upload
               class="avatar-uploader"
-              :action="$baseUrl + '/files/upload'"
+              :action="'/api/files/upload'"
               :headers="{ token: user.token }"
               list-type="picture"
               :on-success="handleAvatarSuccess"
@@ -112,6 +112,11 @@ export default {
     this.load()
   },
   methods: {
+    fixUrl(url) {
+      if (!url) return '';
+      if (url.startsWith('http')) return url;
+      return '/api' + url;
+    },
     handleAdd() {   // 新增数据
       this.form = {}  // 新增数据的时候清空数据
       this.fromVisible = true   // 打开弹窗

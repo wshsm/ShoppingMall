@@ -7,7 +7,4 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface AdminMapper extends BaseMapper<Admin> {
-    Account login(Account account);
-    void insert(Account account);
-    void updatePassword(Account account);
 } 

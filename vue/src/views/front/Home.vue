@@ -5,7 +5,7 @@
       <div style="flex: 1.5; background-color: #81d7ce; border-radius: 10px; margin-right: 10px; color: white;">
         <div style="margin: 10px 10px; font-size: 16px"><b>分类</b></div>
         <div style="display: flex;  margin: 14px 10px" v-for="item in categoryData" :key="item.id">
-          <img :src="item.img" alt="" style="height: 20px; width: 20px; filter: invert(1)">
+          <img :src="fixUrl(item.img)" alt="" style="height: 20px; width: 20px; filter: invert(1)">
           <div style="margin-left: 10px; font-size: 14px"><a href="#" @click.prevent="goTo('/front/category?id=' + item.id)">{{item.name}}</a></div>
         </div>
       </div>
@@ -36,7 +36,7 @@
       </div>
       <div style="flex: 3; height: 490px; background-image: linear-gradient(#a2e0d9 0%, #f7f7f7 100%); margin-left:10px; border-radius: 10px">
         <div style="text-align: center; margin-top: 30px">
-          <img :src="user.avatar" alt="" @click="goTo('/front/person')" style="width: 80px; height: 80px; border-radius: 50%">
+          <img :src="fixUrl(user.avatar)" alt="" @click="goTo('/front/person')" style="width: 80px; height: 80px; border-radius: 50%">
           <div style="margin-top:10px; font-size: 16px"><b>你好，{{user.name}}</b></div>
         </div>
         <div  style="margin: 20px 10px;">
@@ -74,7 +74,7 @@
     <div style="margin: 0 20px">
       <el-row>
         <el-col :span="5" v-for="item in goodsData" :key="item.id">
-          <img :src="item.img" alt="" style="width: 100%; height: 180px; border-radius: 10px;" @click="goTo('/front/detail?id=' + item.id)">
+          <img :src="fixUrl(item.img)" alt="" style="width: 100%; height: 180px; border-radius: 10px;" @click="goTo('/front/detail?id=' + item.id)">
           <div class="text-overflow-ellipsis" style="margin-top: 10px; font-weight: 500; font-size: 16px; width: 180px; color: #000000FF;">{{item.name}}</div>
           <div style="margin-top: 5px; font-size: 18px; color: #FF5000FF">¥{{item.price}}/{{item.unit}}</div>
         </el-col>
@@ -124,6 +124,11 @@ export default {
   },
   // methods：本页面所有的点击事件或者其他函数定义区
   methods: {
+    fixUrl(url) {
+      if (!url) return '';
+      if (url.startsWith('http')) return url;
+      return '/api' + url;
+    },
     loadCategory() {
       this.$request.get('/category/selectAll').then(res => {
         if (res.code === '200') {

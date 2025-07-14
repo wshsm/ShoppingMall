@@ -73,27 +73,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void register(Admin admin) {
-        adminMapper.insert(admin);
-    }
-
-    @Override
     public void updatePassword(Admin admin) {
         adminMapper.updateById(admin);
     }
 
     @Override
-    public Account login(Account account) {
-        return adminMapper.login(account);
-    }
-
-    @Override
-    public void register(Account account) {
-        adminMapper.insert(account);
-    }
-
-    @Override
-    public void updatePassword(Account account) {
-        adminMapper.updatePassword(account);
+    public void register(Admin admin) {
+        adminMapper.insert(admin);
     }
 } 

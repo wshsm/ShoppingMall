@@ -6,6 +6,8 @@ import com.example.common.Result;
 import com.example.common.enums.ResultCodeEnum;
 import com.example.common.enums.RoleEnum;
 import com.example.user.entity.Account;
+import com.example.user.entity.Admin;
+import com.example.user.entity.User;
 import com.example.user.service.AdminService;
 import com.example.user.service.BusinessService;
 import com.example.user.service.UserService;
@@ -41,15 +43,37 @@ public class WebController {
             return Result.error(ResultCodeEnum.PARAM_LOST_ERROR);
         }
         if (RoleEnum.ADMIN.name().equals(account.getRole())) {
-            account = adminService.login(account);
+            Admin admin = new Admin();
+            admin.setUsername(account.getUsername());
+            admin.setPassword(account.getPassword());
+            Admin loginAdmin = adminService.login(admin);
+            if (loginAdmin == null) return Result.error(ResultCodeEnum.USER_ACCOUNT_ERROR);
+            // 可根据需要将Admin转为Account返回
+            account.setName(loginAdmin.getName());
+            account.setRole(loginAdmin.getRole());
+            account.setAvatar(loginAdmin.getAvatar());
+            account.setPhone(loginAdmin.getPhone());
+            account.setEmail(loginAdmin.getEmail());
+            return Result.success(account);
         }
         if (RoleEnum.BUSINESS.name().equals(account.getRole())) {
             account = businessService.login(account);
+            return Result.success(account);
         }
         if (RoleEnum.USER.name().equals(account.getRole())) {
-            account = userService.login(account);
+            User user = new User();
+            user.setUsername(account.getUsername());
+            user.setPassword(account.getPassword());
+            User loginUser = userService.login(user);
+            if (loginUser == null) return Result.error(ResultCodeEnum.USER_ACCOUNT_ERROR);
+            account.setName(loginUser.getName());
+            account.setRole(loginUser.getRole());
+            account.setAvatar(loginUser.getAvatar());
+            account.setPhone(loginUser.getPhone());
+            account.setEmail(loginUser.getEmail());
+            return Result.success(account);
         }
-        return Result.success(account);
+        return Result.error(ResultCodeEnum.USER_ACCOUNT_ERROR);
     }
 
     /**
@@ -62,13 +86,29 @@ public class WebController {
             return Result.error(ResultCodeEnum.PARAM_LOST_ERROR);
         }
         if (RoleEnum.ADMIN.name().equals(account.getRole())) {
-            adminService.register(account);
+            Admin admin = new Admin();
+            admin.setUsername(account.getUsername());
+            admin.setPassword(account.getPassword());
+            admin.setName(account.getName());
+            admin.setRole(account.getRole());
+            admin.setAvatar(account.getAvatar());
+            admin.setPhone(account.getPhone());
+            admin.setEmail(account.getEmail());
+            adminService.register(admin);
         }
         if (RoleEnum.BUSINESS.name().equals(account.getRole())) {
             businessService.register(account);
         }
         if (RoleEnum.USER.name().equals(account.getRole())) {
-            userService.register(account);
+            User user = new User();
+            user.setUsername(account.getUsername());
+            user.setPassword(account.getPassword());
+            user.setName(account.getName());
+            user.setRole(account.getRole());
+            user.setAvatar(account.getAvatar());
+            user.setPhone(account.getPhone());
+            user.setEmail(account.getEmail());
+            userService.register(user);
         }
         return Result.success();
     }
@@ -83,13 +123,19 @@ public class WebController {
             return Result.error(ResultCodeEnum.PARAM_LOST_ERROR);
         }
         if (RoleEnum.ADMIN.name().equals(account.getRole())) {
-            adminService.updatePassword(account);
+            Admin admin = new Admin();
+            admin.setUsername(account.getUsername());
+            admin.setPassword(account.getNewPassword());
+            adminService.updatePassword(admin);
         }
         if (RoleEnum.BUSINESS.name().equals(account.getRole())) {
             businessService.updatePassword(account);
         }
         if (RoleEnum.USER.name().equals(account.getRole())) {
-            userService.updatePassword(account);
+            User user = new User();
+            user.setUsername(account.getUsername());
+            user.setPassword(account.getNewPassword());
+            userService.updatePassword(user);
         }
         return Result.success();
     }

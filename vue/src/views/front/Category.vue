@@ -6,7 +6,7 @@
         <div style="margin: 20px 0">
           <el-row :gutter="20">
             <el-col :span="6" v-for="item in goodsData" :key="item.id">
-              <img :src="item.img" alt="" style="width: 100%; height: 180px; border-radius: 10px;" @click="goTo('/front/detail?id=' + item.id)">
+              <img :src="fixUrl(item.img)" alt="" style="width: 100%; height: 180px; border-radius: 10px;" @click="goTo('/front/detail?id=' + item.id)">
               <div class="text-overflow-ellipsis" style="margin-top: 10px; font-weight: 500; font-size: 16px; width: 180px; color: #000000FF;">{{item.name}}</div>
               <div style="margin-top: 5px; font-size: 18px; color: #FF5000FF">¥{{item.price}}/{{item.unit}}</div>
             </el-col>
@@ -39,6 +39,11 @@ export default {
   },
   // methods：本页面所有的点击事件或者其他函数定义区
   methods: {
+    fixUrl(url) {
+      if (!url) return '';
+      if (url.startsWith('http')) return url;
+      return '/api' + url;
+    },
     loadCategory() {
       this.$request.get('/category/selectById/' + this.categoryId).then(res => {
         if (res.code === '200') {
