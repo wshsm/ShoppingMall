@@ -13,7 +13,7 @@
 
  Date: 14/07/2025 13:58:40
 */
-
+USE shopping_mall;
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
