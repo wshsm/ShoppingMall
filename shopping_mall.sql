@@ -11,7 +11,7 @@
  Target Server Version : 80031 (8.0.31)
  File Encoding         : 65001
 
- Date: 19/12/2024 10:07:23
+ Date: 14/07/2025 13:58:40
 */
 
 SET NAMES utf8mb4;
@@ -54,7 +54,7 @@ CREATE TABLE `admin`  (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES (1, 'admin', 'admin', '管理员', 'http://localhost:9090/files/2024-11-27_13-54-51_R.jpg', 'ADMIN', '13677889922', 'admin@sm.com');
+INSERT INTO `admin` VALUES (1, 'admin', 'admin', '管理员', '/files/2024-11-27_13-54-51_R.jpg', 'ADMIN', '13677889922', 'admin@sm.com');
 
 -- ----------------------------
 -- Table structure for business
@@ -77,15 +77,15 @@ CREATE TABLE `business`  (
 -- ----------------------------
 -- Records of business
 -- ----------------------------
-INSERT INTO `business` VALUES (7, '化妆品', '123', 'ShoppingMall化妆品官方旗舰店', 'http://localhost:9090/files/2024-11-28_11-45-24_OIP-C.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall化妆品，100年专注化妆，科学护肤，你值得拥有', '审核通过');
-INSERT INTO `business` VALUES (8, '户外运动', '123', 'ShoppingMall户外运动官方旗舰店', 'http://localhost:9090/files/2024-11-28_11-58-02_户外运动.png', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall户外运动，100年专注户外运动，你值得拥有', '审核通过');
-INSERT INTO `business` VALUES (9, '家用电器', '123', 'ShoppingMall家用电器官方旗舰店', 'http://localhost:9090/files/2024-11-28_12-08-07_家用电器.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall家用电器，100年专注家用电器，你值得拥有', '审核通过');
-INSERT INTO `business` VALUES (10, '母婴用品', '123', 'ShoppingMall母婴用品官方旗舰店', 'http://localhost:9090/files/2024-12-15_15-02-56_母婴用品.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall母婴用品，100年专注母婴用品，你值得拥有', '审核通过');
-INSERT INTO `business` VALUES (12, '水果', '123', 'ShoppingMall果蔬官方旗舰店', 'http://localhost:9090/files/2024-12-15_14-47-10_水果.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall果蔬，100年专注果蔬，你值得拥有', '审核通过');
-INSERT INTO `business` VALUES (13, '数码', '123', 'ShoppingMall数码官方旗舰店', 'http://localhost:9090/files/2024-12-15_14-58-18_数码.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall数码，100年专注数码，你值得拥有', '审核通过');
-INSERT INTO `business` VALUES (14, '图书', '123', 'ShoppingMall图书官方旗舰店', 'http://localhost:9090/files/2024-12-15_15-09-09_图书.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall图书，100年专注图书，你值得拥有', '审核通过');
-INSERT INTO `business` VALUES (15, '汽车配件', '123', 'ShoppingMall汽车配件官方旗舰店', 'http://localhost:9090/files/2024-12-15_15-15-25_汽车.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall汽车配件，100年专注汽车配件，你值得拥有', '审核通过');
-INSERT INTO `business` VALUES (16, '箱包', '123', 'ShoppingMall箱包官方旗舰店', 'http://localhost:9090/files/2024-12-15_15-12-34_箱包.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall箱包，100年专注箱包，你值得拥有', '审核通过');
+INSERT INTO `business` VALUES (7, '化妆品', '123', 'ShoppingMall化妆品官方旗舰店', '/files/2024-11-28_11-45-24_OIP-C.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall化妆品，100年专注化妆，科学护肤，你值得拥有', '审核通过');
+INSERT INTO `business` VALUES (8, '户外运动', '123', 'ShoppingMall户外运动官方旗舰店', '/files/2024-11-28_11-58-02_户外运动.png', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall户外运动，100年专注户外运动，你值得拥有', '审核通过');
+INSERT INTO `business` VALUES (9, '家用电器', '123', 'ShoppingMall家用电器官方旗舰店', '/files/2024-11-28_12-08-07_家用电器.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall家用电器，100年专注家用电器，你值得拥有', '审核通过');
+INSERT INTO `business` VALUES (10, '母婴用品', '123', 'ShoppingMall母婴用品官方旗舰店', '/files/2024-12-15_15-02-56_母婴用品.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall母婴用品，100年专注母婴用品，你值得拥有', '审核通过');
+INSERT INTO `business` VALUES (12, '水果', '123', 'ShoppingMall果蔬官方旗舰店', '/files/2024-12-15_14-47-10_水果.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall果蔬，100年专注果蔬，你值得拥有', '审核通过');
+INSERT INTO `business` VALUES (13, '数码', '123', 'ShoppingMall数码官方旗舰店', '/files/2024-12-15_14-58-18_数码.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall数码，100年专注数码，你值得拥有', '审核通过');
+INSERT INTO `business` VALUES (14, '图书', '123', 'ShoppingMall图书官方旗舰店', '/files/2024-12-15_15-09-09_图书.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall图书，100年专注图书，你值得拥有', '审核通过');
+INSERT INTO `business` VALUES (15, '汽车配件', '123', 'ShoppingMall汽车配件官方旗舰店', '/files/2024-12-15_15-15-25_汽车.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall汽车配件，100年专注汽车配件，你值得拥有', '审核通过');
+INSERT INTO `business` VALUES (16, '箱包', '123', 'ShoppingMall箱包官方旗舰店', '/files/2024-12-15_15-12-34_箱包.jpg', 'BUSINESS', '18888888888', '188@sm.com', 'ShoppingMall箱包，100年专注箱包，你值得拥有', '审核通过');
 
 -- ----------------------------
 -- Table structure for cart
@@ -123,19 +123,19 @@ CREATE TABLE `category`  (
 -- ----------------------------
 -- Records of category
 -- ----------------------------
-INSERT INTO `category` VALUES (3, '女装内衣', '这是女装内衣专栏', 'http://localhost:9090/files/2024-11-27_13-55-24_女装内衣.png');
-INSERT INTO `category` VALUES (4, '家用电器', '这是家用电器专栏', 'http://localhost:9090/files/2024-11-27_14-04-54_jiayongdianqi.png');
-INSERT INTO `category` VALUES (5, '化妆品', '这是化妆品专栏', 'http://localhost:9090/files/2024-11-27_14-10-57_huazhuangpin.png');
-INSERT INTO `category` VALUES (6, '户外运功', '这是户外运动专栏', 'http://localhost:9090/files/2024-11-27_14-11-22_huwaiyundong.png');
-INSERT INTO `category` VALUES (7, '家纺家饰', '这是家纺家饰专栏', 'http://localhost:9090/files/2024-11-27_14-11-51_jiafangjiashi.png');
-INSERT INTO `category` VALUES (8, '母婴用品', '这是母婴用品专栏', 'http://localhost:9090/files/2024-11-27_14-12-20_muyingwanju.png');
-INSERT INTO `category` VALUES (10, '汽车配件', '这是汽车配件专栏', 'http://localhost:9090/files/2024-11-27_14-13-06_qichepeijian.png');
-INSERT INTO `category` VALUES (12, '数码手机', '这是数码手机专栏', 'http://localhost:9090/files/2024-11-27_14-14-15_shumashouji.png');
-INSERT INTO `category` VALUES (13, '图书音像', '这是图书影像专栏', 'http://localhost:9090/files/2024-11-27_14-14-41_tushuyinxiang.png');
-INSERT INTO `category` VALUES (15, '鞋\\箱包', '这是鞋\\箱包专栏', 'http://localhost:9090/files/2024-11-27_14-16-04_xiexiangbao.png');
-INSERT INTO `category` VALUES (16, '医药保健', '这是医药保健专栏', 'http://localhost:9090/files/2024-11-27_14-16-41_yiyaobaojian.png');
-INSERT INTO `category` VALUES (17, '珠宝饰品', '这是珠宝饰品专栏', 'http://localhost:9090/files/2024-11-27_14-17-06_zhubaoshipin.png');
-INSERT INTO `category` VALUES (18, '水果', '这是水果专栏', 'http://localhost:9090/files/2024-11-27_14-37-57_shuiguo.png');
+INSERT INTO `category` VALUES (3, '女装内衣', '这是女装内衣专栏', '/files/2024-11-27_13-55-24_女装内衣.png');
+INSERT INTO `category` VALUES (4, '家用电器', '这是家用电器专栏', '/files/2024-11-27_14-04-54_jiayongdianqi.png');
+INSERT INTO `category` VALUES (5, '化妆品', '这是化妆品专栏', '/files/2024-11-27_14-10-57_huazhuangpin.png');
+INSERT INTO `category` VALUES (6, '户外运功', '这是户外运动专栏', '/files/2024-11-27_14-11-22_huwaiyundong.png');
+INSERT INTO `category` VALUES (7, '家纺家饰', '这是家纺家饰专栏', '/files/2024-11-27_14-11-51_jiafangjiashi.png');
+INSERT INTO `category` VALUES (8, '母婴用品', '这是母婴用品专栏', '/files/2024-11-27_14-12-20_muyingwanju.png');
+INSERT INTO `category` VALUES (10, '汽车配件', '这是汽车配件专栏', '/files/2024-11-27_14-13-06_qichepeijian.png');
+INSERT INTO `category` VALUES (12, '数码手机', '这是数码手机专栏', '/files/2024-11-27_14-14-15_shumashouji.png');
+INSERT INTO `category` VALUES (13, '图书音像', '这是图书影像专栏', '/files/2024-11-27_14-14-41_tushuyinxiang.png');
+INSERT INTO `category` VALUES (15, '鞋\\箱包', '这是鞋\\箱包专栏', '/files/2024-11-27_14-16-04_xiexiangbao.png');
+INSERT INTO `category` VALUES (16, '医药保健', '这是医药保健专栏', '/files/2024-11-27_14-16-41_yiyaobaojian.png');
+INSERT INTO `category` VALUES (17, '珠宝饰品', '这是珠宝饰品专栏', '/files/2024-11-27_14-17-06_zhubaoshipin.png');
+INSERT INTO `category` VALUES (18, '水果', '这是水果专栏', '/files/2024-11-27_14-37-57_shuiguo.png');
 
 -- ----------------------------
 -- Table structure for goods
@@ -158,24 +158,24 @@ CREATE TABLE `goods`  (
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES (8, '冰箱', 'http://localhost:9090/files/2024-11-30_18-08-26_冰箱.png', '<p>这个冰箱是最好的</p>', 5000.00, '件', 102, 2, 4, 9);
-INSERT INTO `goods` VALUES (11, '面霜', 'http://localhost:9090/files/2024-12-09_15-27-29_huazhuangpin.jpg', '<p>最好的</p>', 100.00, '盒', 6, 94, 5, 7);
-INSERT INTO `goods` VALUES (13, '护肤品套装', 'http://localhost:9090/files/2024-12-15_14-43-57_护肤品套装.jpg', '', 500.00, '套', 0, 100, 5, 7);
-INSERT INTO `goods` VALUES (14, '精华水', 'http://localhost:9090/files/2024-12-15_14-44-48_jinhuashui.jpg', '', 99.00, '瓶', 2, 98, 5, 7);
-INSERT INTO `goods` VALUES (15, '西瓜', 'http://localhost:9090/files/2024-12-15_14-48-19_西瓜.jpg', '', 30.00, '个', 1, 99, 18, 12);
-INSERT INTO `goods` VALUES (16, '橙子', 'http://localhost:9090/files/2024-12-15_14-49-12_橙子.jpg', '', 20.00, '箱', 0, 100, 18, 12);
-INSERT INTO `goods` VALUES (17, '草莓', 'http://localhost:9090/files/2024-12-15_14-49-45_草莓.jpg', '', 20.00, '斤', 0, 100, 18, 12);
-INSERT INTO `goods` VALUES (18, '电脑', 'http://localhost:9090/files/2024-12-15_14-58-30_电脑.png', '<p><img src=\"http://localhost:9090/files/2024-12-15_20-52-49_详情图片_34.jpg\" style=\"max-width:100%;\" contenteditable=\"false\"/><img src=\"http://localhost:9090/files/2024-12-15_20-52-58_详情图片_01.jpg\" style=\"max-width:100%;\" contenteditable=\"false\"/></p>', 9999.00, '件', 0, 100, 12, 13);
-INSERT INTO `goods` VALUES (19, '手机', 'http://localhost:9090/files/2024-12-15_14-59-03_手机.png', '', 6999.00, '件', 1, 99, 12, 13);
-INSERT INTO `goods` VALUES (20, '耳机', 'http://localhost:9090/files/2024-12-15_14-59-26_耳机.jpg', '', 1999.00, '件', 0, 100, 12, 13);
-INSERT INTO `goods` VALUES (21, '奶粉', 'http://localhost:9090/files/2024-12-15_15-03-10_奶粉.jpg', '', 199.00, '瓶', 0, 100, 8, 10);
-INSERT INTO `goods` VALUES (22, '奶瓶', 'http://localhost:9090/files/2024-12-15_15-03-43_奶瓶.jpg', '', 59.00, '件', 0, 100, 8, 10);
-INSERT INTO `goods` VALUES (23, '四大名著', 'http://localhost:9090/files/2024-12-15_15-09-20_名著.jpg', '', 199.00, '套', 0, 100, 13, 14);
-INSERT INTO `goods` VALUES (24, '科幻小说', 'http://localhost:9090/files/2024-12-15_15-09-51_科幻.jpg', '', 59.00, '本', 0, 100, 13, 14);
-INSERT INTO `goods` VALUES (25, '行李箱', 'http://localhost:9090/files/2024-12-15_15-12-45_行李箱.jpg', '', 2999.00, '件', 1, 99, 15, 16);
-INSERT INTO `goods` VALUES (26, '包', 'http://localhost:9090/files/2024-12-15_15-13-11_包.jpg', '', 19999.00, '件', 0, 100, 15, 16);
-INSERT INTO `goods` VALUES (27, '汽车轮胎', 'http://localhost:9090/files/2024-12-15_15-15-38_轮胎.jpg', '', 1999.00, '个', 0, 100, 10, 15);
-INSERT INTO `goods` VALUES (28, '汽车零部件', 'http://localhost:9090/files/2024-12-15_15-16-16_零部件.jpg', '', 199.00, '个', 0, 100, 10, 15);
+INSERT INTO `goods` VALUES (8, '冰箱', '/files/2024-11-30_18-08-26_冰箱.png', '<p>这个冰箱是最好的</p>', 5000.00, '件', 102, 2, 4, 9);
+INSERT INTO `goods` VALUES (11, '面霜', '/files/2024-12-09_15-27-29_huazhuangpin.jpg', '<p>最好的</p>', 100.00, '盒', 6, 94, 5, 7);
+INSERT INTO `goods` VALUES (13, '护肤品套装', '/files/2024-12-15_14-43-57_护肤品套装.jpg', '', 500.00, '套', 0, 100, 5, 7);
+INSERT INTO `goods` VALUES (14, '精华水', '/files/2024-12-15_14-44-48_jinhuashui.jpg', '', 99.00, '瓶', 2, 98, 5, 7);
+INSERT INTO `goods` VALUES (15, '西瓜', '/files/2024-12-15_14-48-19_西瓜.jpg', '', 30.00, '个', 1, 99, 18, 12);
+INSERT INTO `goods` VALUES (16, '橙子', '/files/2024-12-15_14-49-12_橙子.jpg', '', 20.00, '箱', 0, 100, 18, 12);
+INSERT INTO `goods` VALUES (17, '草莓', '/files/2024-12-15_14-49-45_草莓.jpg', '', 20.00, '斤', 0, 100, 18, 12);
+INSERT INTO `goods` VALUES (18, '电脑', '/files/2024-12-15_14-58-30_电脑.png', '<p><img src=\"http://localhost:9090/files/2024-12-15_20-52-49_详情图片_34.jpg\" style=\"max-width:100%;\" contenteditable=\"false\"/><img src=\"http://localhost:9090/files/2024-12-15_20-52-58_详情图片_01.jpg\" style=\"max-width:100%;\" contenteditable=\"false\"/></p>', 9999.00, '件', 0, 100, 12, 13);
+INSERT INTO `goods` VALUES (19, '手机', '/files/2024-12-15_14-59-03_手机.png', '', 6999.00, '件', 1, 99, 12, 13);
+INSERT INTO `goods` VALUES (20, '耳机', '/files/2024-12-15_14-59-26_耳机.jpg', '', 1999.00, '件', 0, 100, 12, 13);
+INSERT INTO `goods` VALUES (21, '奶粉', '/files/2024-12-15_15-03-10_奶粉.jpg', '', 199.00, '瓶', 0, 100, 8, 10);
+INSERT INTO `goods` VALUES (22, '奶瓶', '/files/2024-12-15_15-03-43_奶瓶.jpg', '', 59.00, '件', 0, 100, 8, 10);
+INSERT INTO `goods` VALUES (23, '四大名著', '/files/2024-12-15_15-09-20_名著.jpg', '', 199.00, '套', 0, 100, 13, 14);
+INSERT INTO `goods` VALUES (24, '科幻小说', '/files/2024-12-15_15-09-51_科幻.jpg', '', 59.00, '本', 0, 100, 13, 14);
+INSERT INTO `goods` VALUES (25, '行李箱', '/files/2024-12-15_15-12-45_行李箱.jpg', '', 2999.00, '件', 1, 99, 15, 16);
+INSERT INTO `goods` VALUES (26, '包', '/files/2024-12-15_15-13-11_包.jpg', '', 19999.00, '件', 0, 100, 15, 16);
+INSERT INTO `goods` VALUES (27, '汽车轮胎', '/files/2024-12-15_15-15-38_轮胎.jpg', '', 1999.00, '个', 0, 100, 10, 15);
+INSERT INTO `goods` VALUES (28, '汽车零部件', '/files/2024-12-15_15-16-16_零部件.jpg', '', 199.00, '个', 0, 100, 10, 15);
 
 -- ----------------------------
 -- Table structure for notice
@@ -241,7 +241,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (2, 'mmm', '123', 'mmm', 'http://localhost:9090/files/2024-12-01_19-03-50_头像.jpeg', 'USER', '18888888888', '188@sm.com');
+INSERT INTO `user` VALUES (2, 'mmm', '123', 'mmm', '/files/2024-12-01_19-03-50_头像.jpeg', 'USER', '18888888888', '188@sm.com');
 INSERT INTO `user` VALUES (5, '1', '123', '1', NULL, 'USER', NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
