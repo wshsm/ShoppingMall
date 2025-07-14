@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>gateway-service</artifactId>
-    <packaging>jar</packaging>
+<!--    <packaging>jar</packaging>-->
 
     <dependencies>
         <!-- Common Gateway Service -->
@@ -58,7 +58,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <fork>true</fork>
+<!--                    <fork>true</fork>-->
                 </configuration>
             </plugin>
         </plugins>

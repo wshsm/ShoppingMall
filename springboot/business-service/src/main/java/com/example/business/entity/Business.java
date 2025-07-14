@@ -14,27 +14,27 @@ import java.io.Serializable;
 @AllArgsConstructor
 @TableName("business")
 public class Business implements Serializable {
-    private static final long serialVersionUID = 1L;
 
     /** ID */
     @TableId(type = IdType.AUTO)
     private Integer id;
-    /** 用户名 */
+    /** 商家登陆用户名 */
     private String username;
-    /** 密码 */
+    /** 商家登陆密码 */
     private String password;
-    /** 姓名 */
+    /** 商家名称 */
     private String name;
-    /** 电话 */
+    /** 商家头像文件地址 */
+    private String avatar;
+    /** 商家身份 */
+    private String role;
+    /** 商家电话 */
     private String phone;
     /** 邮箱 */
     private String email;
-    /** 头像 */
-    private String avatar;
-    /** 角色标识 */
-    private String role;
-    /** 店铺介绍*/
+    /** 商家描述 */
     private String description;
-    /** 店铺审核状态*/
+    /** 商家状态 */
     private String status;
+  
 } 

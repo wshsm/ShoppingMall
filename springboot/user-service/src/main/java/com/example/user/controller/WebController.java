@@ -11,9 +11,10 @@ import com.example.user.entity.User;
 import com.example.user.service.AdminService;
 import com.example.user.service.BusinessService;
 import com.example.user.service.UserService;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
+
 
 /**
  * 基础前端接口
