@@ -5,7 +5,6 @@ import cn.hutool.core.util.ObjectUtil;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
-import com.example.common.Constants;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +19,8 @@ import java.util.Date;
  */
 @Component
 public class TokenUtils {
+
+    private static final String TOKEN = "token";
 
     private static final Logger log = LoggerFactory.getLogger(TokenUtils.class);
 
@@ -38,7 +39,7 @@ public class TokenUtils {
     public static String getCurrentUserId() {
         try {
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-            String token = request.getHeader(Constants.TOKEN);
+            String token = request.getHeader(TOKEN);
             if (ObjectUtil.isNotEmpty(token)) {
                 String userRole = JWT.decode(token).getAudience().get(0);
                 return userRole.split("-")[0];  // 获取用户id
@@ -55,7 +56,7 @@ public class TokenUtils {
     public static String getCurrentUserRole() {
         try {
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-            String token = request.getHeader(Constants.TOKEN);
+            String token = request.getHeader(TOKEN);
             if (ObjectUtil.isNotEmpty(token)) {
                 String userRole = JWT.decode(token).getAudience().get(0);
                 return userRole.split("-")[1];  // 获取角色

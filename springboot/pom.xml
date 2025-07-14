@@ -11,12 +11,7 @@
 
     <modules>
         <module>common-service</module>
-        <module>common-gateway</module>
-        <module>user-service</module>
-        <module>goods-service</module>
-        <module>order-service</module>
-        <module>business-service</module>
-        <module>gateway-service</module>
+        <module>base-service</module>
     </modules>
 
     <parent>
